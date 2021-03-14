@@ -13,13 +13,15 @@ export default class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
-          <Button>testing button</Button>
-          <div>
-            <Link to='/quiz'>Start Quiz</Link>
-          </div>
-          <div>
-            <Link to='/settings'>Settings</Link>
-          </div>
+          <Link to='/quiz'>
+            <Button>Start Hirigana Revision</Button>
+          </Link>            
+
+          {/* <div>
+            <Link to='/settings'>
+              <Button>Settings</Button>
+            </Link>
+          </div> */}
       </div>
     )
   }

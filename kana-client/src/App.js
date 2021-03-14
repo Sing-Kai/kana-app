@@ -8,6 +8,10 @@ import {
 } from "react-router-dom";
 import QuizContent from "./components/Quiz";
 import Settings from "./pages/Settings";
+import {createGlobalStyle} from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+`;
 
 function App() {
 
