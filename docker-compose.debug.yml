@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  kana-client:
+    image: kana-client
+    stdin_open: true
+    build:
+      context: kana-client
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    networks: 
+      - kana-app
+
+  kana-server:
+    image: kana-server
+    ports: 
+      - "8080:8080"
+    networks: 
+      - kana-app
+
+networks:
+  kana-app:
+    driver: bridge

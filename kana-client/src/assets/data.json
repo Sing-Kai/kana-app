@@ -1,0 +1,69 @@
+[
+  {
+    "questionid": 1,
+
+    "question": {
+      "id": 1,
+      "kana": "あ"
+    },
+
+    "answers": [  {
+      "id": 6,
+      "kana": "か"
+    },
+    {
+      "id": 1,
+      "kana": "あ"
+    },
+    {
+      "id": 8,
+      "kana": "く"
+    }]
+
+  },
+  {
+    "questionid": 2,
+
+    "question": {
+      "id": 6,
+      "kana": "か"
+    },
+
+    "answers": [  {
+      "id": 6,
+      "kana": "か"
+    },
+    {
+      "id": 1,
+      "kana": "あ"
+    },
+    {
+      "id": 8,
+      "kana": "く"
+    }]
+
+  },
+  {
+    "questionid": 3,
+
+    "question": {
+      "id": 8,
+      "kana": "く"
+    },
+
+    "answers": [  {
+      "id": 6,
+      "kana": "か"
+    },
+    {
+      "id": 1,
+      "kana": "あ"
+    },
+    {
+      "id": 8,
+      "kana": "く"
+    }]
+
+  }
+
+]
