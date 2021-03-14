@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
+import {Button} from '../components/common'
 
 
 export default class Home extends Component {
@@ -12,6 +13,7 @@ export default class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
+          <Button>testing button</Button>
           <div>
             <Link to='/quiz'>Start Quiz</Link>
           </div>

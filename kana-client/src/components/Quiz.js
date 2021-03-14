@@ -7,17 +7,6 @@ import axios from 'axios'
 
 const queryClient = new QueryClient();
 
-// const QuizContent = () => {
-//   // const {inputText} = useSearch();
-//   const inputText = "testing"
-//   // if(inputText === "") return <div className = "search-term"></div>
-//   return (
-//     <QueryClientProvider client ={queryClient}>
-//       <Quiz initialIsOpen={false}/> 
-//     </QueryClientProvider>
-//   );
-// }
-
 const QuizContent = () => {
 
   const [quiz, setQuiz] = useState([]);

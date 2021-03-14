@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import QuizContent from "./components/Quiz";
-import Settings from "./components/Settings";
+import Settings from "./pages/Settings";
 
 function App() {
 
