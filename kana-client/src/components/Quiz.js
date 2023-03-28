@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Answer from './Answer';
-import Question from "./Question";
+import Sound from "./Sound";
 import Page from '../components/layout/Page'
 import useFetch from '../hooks/useFetch';
 import {url} from '../url/baseUrl';
@@ -38,7 +38,7 @@ const Quiz = ({qdata}) =>{
   return(
 
     <div >
-      <Question question = {data[questionId].question}/>
+      <Sound question = {data[questionId].question}/>
 
       <div className="answers">
         {data[questionId].answers.map((ans) => 

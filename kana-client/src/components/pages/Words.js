@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch"
-import {listUrl} from "../../url/baseUrl";
+import {listUrl, getAudioUrl} from "../../url/baseUrl";
 
 const Words = () => {
 
@@ -14,8 +14,6 @@ const Words = () => {
   }
 
   if(data){  
-
-    console.log(data);
     return (
       data.map(({id, hiri})=>
         <Word id={id} kana={hiri}/>
@@ -26,7 +24,15 @@ const Words = () => {
 }
 
 const Word = ({id, kana}) => {
-  return <div className='answer' key={id}>
+
+  const url = getAudioUrl(id);
+  let audio = new Audio(url)
+
+  const start = () => {
+    audio.play()
+  }
+
+  return <div className='answer' key={id} onClick={start}>
     {kana}
   </div>
 }

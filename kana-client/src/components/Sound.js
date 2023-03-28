@@ -1,8 +1,9 @@
 import React from 'react'
+import { getAudioUrl } from '../url/baseUrl'
 
-const Question = ({question}) =>{
-
-  let audio = new Audio(`http://localhost:8080/assets/audio/${question.id}?`)
+const Sound = ({question}) =>{
+  const url = getAudioUrl(question.id);
+  let audio = new Audio(url)
 
   const start = () => {
     audio.play()
@@ -16,4 +17,4 @@ const Question = ({question}) =>{
   )
 }
 
-export default  Question
+export default Sound
