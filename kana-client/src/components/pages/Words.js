@@ -1,26 +1,26 @@
 import useFetch from "../../hooks/useFetch"
 import {listUrl, getAudioUrl} from "../../url/baseUrl";
-
+import Page from '../../components/layout/Page'
 const Words = () => {
 
   const {loading, error, data} = useFetch(listUrl)
 
   if(loading) {
-    return <div>loading</div>
+    return <Page>loading</Page>
   }
 
   if(error){
-    return <div>error</div>
+    return <Page>error</Page>
   }
 
   if(data){  
+    console.log(data)
     return (
       data.map(({id, hiri})=>
         <Word id={id} kana={hiri}/>
       )
     ) 
   }
-
 }
 
 const Word = ({id, kana}) => {
