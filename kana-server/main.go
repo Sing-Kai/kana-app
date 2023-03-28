@@ -8,17 +8,18 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/Sing-Kai/kana-rest-api.git/list"
 	"github.com/Sing-Kai/kana-rest-api.git/quiz"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-
 	r := gin.Default()
 	r.Use(cors.Default())
 	r.GET("/healthy", health)
 	r.GET("/quiz", quiz.HandleKanaQuiz)
+	r.GET("/list", list.HandleList)
 	r.GET("/assets/audio/:id", handleAudioFile)
 	r.Run()
 }

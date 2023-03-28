@@ -1,15 +1,12 @@
 import './App.css';
-import Home from "./pages/Home";
+import Home from "../src/components/pages/Home";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
 import QuizContent from "./components/Quiz";
-import Settings from "./pages/Settings";
-import {createGlobalStyle} from 'styled-components'
-
-const GlobalStyle = createGlobalStyle``;
+import Settings from "../src/components/pages/Settings";
 
 function App() {
 

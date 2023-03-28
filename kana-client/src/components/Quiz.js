@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Answer from './Answer';
 import Question from "./Question";
-import axios from 'axios'
+import Page from '../components/layout/Page'
 import useFetch from '../hooks/useFetch';
 import {url} from '../url/baseUrl';
 
@@ -10,13 +10,13 @@ const QuizContent = () => {
   const {loading, error, data} = useFetch(url);
 
   if(error){
-    return <div>Opppos error</div>
+    return <Page>Opppos error</Page>
   }
 
   if (loading){
-    return (<div>Loading Quizz</div>)
+    return (<Page>Loading Quizz</Page>)
   }
-  return (<div><Quiz qdata = {data}/></div>)
+  return (<Page><Quiz qdata = {data}/></Page>)
 }
 
 const Quiz = ({qdata}) =>{
