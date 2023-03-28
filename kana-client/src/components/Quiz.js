@@ -1,30 +1,22 @@
 import React, {useState, useEffect} from 'react'
-import QuizData from '../assets/data.json'
 import Answer from './Answer';
 import Question from "./Question";
-import {useQuery, QueryClient, QueryClientProvider}from 'react-query';
 import axios from 'axios'
-
-const queryClient = new QueryClient();
+import useFetch from '../hooks/useFetch';
+import {url} from '../url/baseUrl';
 
 const QuizContent = () => {
 
-  const [quiz, setQuiz] = useState([]);
+  const {loading, error, data} = useFetch(url);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await axios('http://localhost:8080/quiz');
-      var quiz = response.data;
-      setQuiz(quiz);
-    }
-    fetchData();
-  }, []);
+  if(error){
+    return <div>Opppos error</div>
+  }
 
-  if (quiz === undefined || quiz.length === 0){
-    console.log('Loading Quiz')
+  if (loading){
     return (<div>Loading Quizz</div>)
   }
-  return (<div><Quiz qdata = {quiz}/></div>)
+  return (<div><Quiz qdata = {data}/></div>)
 }
 
 const Quiz = ({qdata}) =>{
