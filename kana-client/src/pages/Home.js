@@ -12,16 +12,19 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <div>
+          <h1>Hirigana and Katagana Practise</h1>
+        </div>
+        <div>
           <Link to='/quiz'>
-            <Button>Start Hirigana Revision</Button>
-          </Link>            
-
-          {/* <div>
-            <Link to='/settings'>
-              <Button>Settings</Button>
-            </Link>
-          </div> */}
+            <Button>Start Revision</Button>
+          </Link> 
+        </div>
+        <div>
+          <Link to='/settings'>
+            <Button>Settings</Button>
+          </Link>
+        </div>
       </div>
     )
   }
