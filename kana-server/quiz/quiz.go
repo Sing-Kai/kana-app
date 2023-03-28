@@ -86,19 +86,6 @@ func getKanaIds(total, questionId, length int) []int {
 		ans = append(ans, k)
 	}
 
-	// i := 0
-
-	// for i < total-1 {
-	// 	//ensure randNum starts with 1
-	// 	randNum := rand.Intn(length-1) + 1
-	// 	if randNum != questionId {
-	// 		ans = append(ans, randNum)
-	// 		i++
-	// 	}
-	// }
-
-	// ans = append(ans, questionId)
-
 	//shuffle answers
 	rand.Shuffle(len(ans), func(i, j int) { ans[i], ans[j] = ans[j], ans[i] })
 
