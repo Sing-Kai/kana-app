@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import QuizContent from "./components/Quiz";
+import Questions from "./components/quiz/Questions";
 import Settings from "../src/components/pages/Settings";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/quiz" element={<QuizContent />}/>
+          <Route path="/quiz" element={<Questions />}/>
           <Route path="/settings" element={ <Settings />}/>        
           <Route exact path="/" element={<Home />}>
           </Route>

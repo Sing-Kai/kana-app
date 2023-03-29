@@ -1,6 +1,6 @@
 import React, {useState, useEffect}from 'react'
 
-const Answer = ({id, kana, questionId, answerClick}) =>{
+const Option = ({id, kana, questionId, answerClick}) =>{
 
   const white = "white"
   const correct = "rgb(167, 250, 205)"
@@ -56,4 +56,4 @@ const Answer = ({id, kana, questionId, answerClick}) =>{
   )
 }
 
-export default Answer
+export default Option

@@ -1,8 +1,8 @@
 import React from 'react'
-import { getAudioUrl } from '../url/baseUrl'
+import { getAudioUrl } from '../../url/baseUrl'
 
-const Sound = ({question}) =>{
-  const url = getAudioUrl(question.id);
+const Sound = ({id}) =>{
+  const url = getAudioUrl(id);
   let audio = new Audio(url)
 
   const start = () => {
@@ -11,7 +11,6 @@ const Sound = ({question}) =>{
 
   return(
     <div className="question-container" onClick={start}>
-      <h1>{question.hiri}</h1> 
       <span className="pulse"></span>   
     </div>
   )
