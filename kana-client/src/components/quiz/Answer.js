@@ -1,30 +1,21 @@
 import {useEffect, useState} from 'react';
 
 const Answer = ({kana, next}) => {
+  const [showAnswer, setShowAnswer] = useState(false);
 
-  const [display, setDisplay] = useState(false);
-  const [text, setText] = useState('Show Answer');
-  
-  const handleOnClick = (value) =>{
-    if(value){
-      setText(kana)
-    }else{
-      setText('Show Answer')
-    }
-    setDisplay((curr)=>!curr)
-  }
+  useEffect(() => {
+    setShowAnswer(false);
+  }, [next]);
 
-  useEffect(()=>{
-    setText('Show Answer')
-  }, [next])
+  const handleClick = () => {
+    setShowAnswer(!showAnswer);
+  };
 
-  return(
+  return (
     <div className='button-container'>
-      {
-        <button onClick={()=>{handleOnClick(display)}}>
-          {text}
-        </button>
-      }
+      <button onClick={handleClick}>
+        {showAnswer ? kana : 'Show Answer'}
+      </button>
     </div>
   )
 }
