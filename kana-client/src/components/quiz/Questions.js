@@ -30,35 +30,35 @@ const QuestionsContent = ({questionData}) =>{
   const [questionId, setQuestionId] = useState(0);
   const [next, setNext] = useState(false);
   const [answer, setAnswer] = useState('');
-  const data = questionData;
+  const { question, answers } = questionData[questionId];
 
   const answerClick =(id)=>{
     //check if answer is correct if so go to the next question
-    if(id === data[questionId].question.id){
-      const nextId = questionId +1 % data.length
-      setQuestionId(nextId);
-      setAnswer(data[nextId].question.hiri);
+    if(id === question.id){
+      const nextIndex = questionId +1 % questionData.length
+      setQuestionId(nextIndex);
+      setAnswer(questionData[nextIndex].question.hiri);
       setNext((curr)=>!curr)
     }
   }
 
   useEffect(()=>{
-    setAnswer(data[questionId].question.hiri);
+    setAnswer(question.hiri);
   }, [])
 
-  if (data.length === questionId) {
+  if (question.length === questionId) {
     return (<div>Finished </div>)
   }
 
   return(
     <Page>
-      <Sound id = {data[questionId].question.id}/>
+      <Sound id = {question.id}/>
       <div className="answers">
-        {data[questionId].answers.map((ans) => 
+        {answers.map((ans) => 
         (<Option key = {ans.id} 
                  id = {ans.id} 
                  kana ={ans.hiri} 
-                 questionId={data[questionId].question.id} 
+                 questionId={question.id} 
                  answerClick ={answerClick}
           />))}
       </div>
