@@ -35,8 +35,9 @@ const QuestionsContent = ({questionData}) =>{
   const answerClick =(id)=>{
     //check if answer is correct if so go to the next question
     if(id === data[questionId].question.id){
-      const next = questionId +1 % data.length
-      setQuestionId(next);
+      const nextId = questionId +1 % data.length
+      setQuestionId(nextId);
+      setAnswer(data[nextId].question.hiri);
       setNext((curr)=>!curr)
     }
   }
